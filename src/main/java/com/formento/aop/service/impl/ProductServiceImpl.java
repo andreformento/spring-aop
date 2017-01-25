@@ -4,7 +4,10 @@ import com.formento.aop.model.Product;
 import com.formento.aop.service.ProductService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.concurrent.Immutable;
+
 @Service
+@Immutable
 public class ProductServiceImpl implements ProductService {
 
     @Override

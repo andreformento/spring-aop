@@ -5,11 +5,13 @@ import com.formento.aop.model.Product;
 import com.formento.aop.validation.ProductCreationValidator;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.concurrent.Immutable;
 import java.math.BigDecimal;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 @Component
+@Immutable
 public class ProductCreationValidatorImpl implements ProductCreationValidator {
 
     public void validate(Product product) {

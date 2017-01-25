@@ -3,9 +3,11 @@ package com.formento.aop.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.annotation.concurrent.Immutable;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Immutable
 public class Product implements Serializable {
 
     private final String name;

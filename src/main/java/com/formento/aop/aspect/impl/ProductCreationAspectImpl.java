@@ -12,8 +12,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.concurrent.Immutable;
+
 @Component
 @Aspect
+@Immutable
 public class ProductCreationAspectImpl implements ProductCreationAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductCreationAspectImpl.class);
@@ -27,7 +30,7 @@ public class ProductCreationAspectImpl implements ProductCreationAspect {
 
     @AfterReturning("execution(* com.formento.aop..*Service.*(..))")
     public void logServiceCreate(JoinPoint joinPoint) {
-        LOGGER.info("Created: " + joinPoint);
+        LOGGER.info("Created: {}", joinPoint);
     }
 
 
